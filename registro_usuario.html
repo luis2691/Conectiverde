@@ -52,13 +52,15 @@
 <!-- aqui registro e ingreso de usuario -->
 		<center>
 			<h2>Ingresa a tu cuenta</h2>
-				<form action="inicioUser.php" method="post">
+				<form action="inicioUser.php" method="GET">
 					Email: <input type="text" name="Correo" placeholder="ejemplo@mail.com" maxlength="25" size="10"><br>
 					Contraseña: <input type="`Password" name="Password" placeholder="Ingresa tu contraseña"><br>
 					<input type="submit">
 				</form>
 				<br><br>
-			<h2>Crear cuenta nueva</h2>
+		
+		<h2>Crear cuenta nueva</h2>
+			
 				<form action="registrarBD.php" method="GET" >
 					
 					Nombre: <input type="text" name="Nombre" placeholder="Juanito Pérez" maxlength="25" size="25"><br>

@@ -23,7 +23,7 @@ $resultado=mysql_query( $sql ,$conexion);
    		echo " El Cliente que desea ingresar ya existe ";
 		mysql_close($conexion); 
      } else if( $numResults == 0) {
-	$agregar = mysql_query("insert into usuario values ('" .$_GET['Nombre']. "','" .$_GET['Rut']."','" .$_GET['Sexo']."','" .$_GET['Correo']."','" .$_GET['Password']. "')", $conexion); 
+	$agregar = mysql_query("insert into Usuario values ('" .$_GET['Nombre']. "','" .$_GET['Rut']."','" .$_GET['Sexo']."','" .$_GET['Correo']."','" .$_GET['Password']. "')", $conexion); 
 	$a= mysql_query("select * from usuario Where Correo = '" . $_GET['Correo'] . "'" , $conexion);
 	echo "Usuario agregado con éxito";
 ?>
@@ -40,4 +40,3 @@ $resultado=mysql_query( $sql ,$conexion);
 	<a href="index.html" class="volver">Inicio <a/>
 </body>
 </html>
-
