@@ -2,8 +2,8 @@
 <?php
 include("misfunciones.php");
 $conexion=Conectarse(); 
-$codigo =  $_GET['Correo'];
-$sql = "select * from usuario where Correo = '" . $Correo . "'";
+$codigo =  $_GET['corr'];
+$sql = "select * from usuario where Correo = '" . $codigo . "'";
 $resultado=mysql_query( $sql ,$conexion); 
 ?>
 
@@ -22,9 +22,10 @@ $resultado=mysql_query( $sql ,$conexion);
      if ($numResults != 0) {
    		echo " El Usuario que desea ingresar ya existe ";
 		mysql_close($conexion); 
-     } else if( $numResults == 0) {
-	$agregar = mysql_query("insert into usuario values ('" .$_GET['Nombre']. "','" .$_GET['Rut']."','" .$_GET['Sexo']."','" .$_GET['Correo']."','" .$_GET['Password']. "')", $conexion); 
-	
+     } else if( $numResults == 0)		 {
+		 
+	  $agregar = mysql_query("insert into usuario (`Nombre`, `Rut`, `Sexo`, `Correo`, `Password`) values ('" .$_GET['nom']. "','" .$_GET['ru']."','" .$_GET['sex']."','" .$_GET['corr']."','" .$_GET['pass']. "')", $conexion); 
+	  
 	 echo "Usuario agregado con éxito";}
 ?>
 
